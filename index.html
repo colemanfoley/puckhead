@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <title>puckhead</title>
+    </head>
+    <body>
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="headtrackr.js"></script>
+        <script src="tracking.js"></script>
+
+        <canvas id="inputCanvas" width="320" height="240" style="display:none"></canvas>
+        <video id="inputVideo" autoplay loop></video>
+        <script type="text/javascript">
+          var videoInput = document.getElementById('inputVideo');
+          var canvasInput = document.getElementById('inputCanvas');
+
+          var htracker = new headtrackr.Tracker();
+          htracker.init(videoInput, canvasInput);
+          htracker.start();
+        </script>
+
+        <h1 class="x">x is: </h1>
+        <h1 class="y">y is: </h1>
+    </body>
+</html>
