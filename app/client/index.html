@@ -22,15 +22,6 @@
 
     <script type="text/javascript">
       var socket = io.connect('http://localhost');
-      socket.on('news', function (data) {
-        console.log(data);
-        socket.emit('my other event', { my: 'data' });
-      });
-
-      $('.ready').click(function(){
-        console.log("Clicked ready");
-        socket.emit('signalReadiness');
-      })
       var videoInput = document.getElementById('inputVideo');
       var canvasInput = document.getElementById('inputCanvas');
 

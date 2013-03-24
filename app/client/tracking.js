@@ -174,9 +174,12 @@ window.onload = function() {
 
   $('.ready').click(function (e) {
     $('.overlay').remove();
-    ready();
+    socket.emit('announceReadiness');
   });
 
+  socket.on('bothPlayersReady', function(){
+    ready();
+  })
   window.ready = function() {
     window.setInterval(update, 1000 / 60);
   };
