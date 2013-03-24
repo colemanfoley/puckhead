@@ -4,7 +4,7 @@ var fs = require('fs');
 //router
 var server = http.createServer(function (request, response) {
   if (request.url === '/') {
-    fs.readFile('index.html', function (err, data) {
+    fs.readFile('../client/index.html', function (err, data) {
       if (err) throw err;
       response.end(data);
     });

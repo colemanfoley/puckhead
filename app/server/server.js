@@ -5,7 +5,7 @@ var app = require('express')(),
 server.listen(8080);
 
 app.get('/', function (req, res) {
-  res.sendfile(__dirname + '/index.html');
+  res.sendfile(__dirname + '../client/index.html');
 });
 
 app.get('/raphael.js', function (req, res) {
