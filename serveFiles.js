@@ -36,17 +36,20 @@ var server = http.createServer(function (request, response) {
   }
 });
 
-
-
 server.listen(8000);
 
 var io = require('socket.io').listen(server);
 
 //game positions
 io.sockets.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
+  socket.join('room');
+
+  socket.on('playerReady', function(data) {
+    //once both players ready, then emit bothready
+  });
+
   socket.on('move', function (data) {
-    console.log('yo', data)
+    socket.broadcast.to('room').emit('e', data);
   });
 });
 
