@@ -172,16 +172,21 @@ window.onload = function() {
       }
    });
 
+  $(document).ready(function(){
+    $('#scoreboard').hide();
+  });
+
   $('.ready').click(function (e) {
     $('.overlay').remove();
     socket.emit('announceReadiness');
+    ready();
   });
 
   socket.on('bothPlayersReady', function(){
-    ready();
   })
   window.ready = function() {
     window.setInterval(update, 1000 / 60);
+    $('#scoreboard').show();
   };
 
 };

@@ -38,3 +38,11 @@ video {
 #canvas_container {
   margin-top: 360px;
 }
+
+#scoreboard {
+  width: 500px;
+  height: 50px;
+  background-color: black;
+  margin-left: auto;
+  margin-right: auto;
+}
