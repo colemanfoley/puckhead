@@ -225,9 +225,9 @@ window.onload = function() {
 // scoring system (resetting board)
 // ending games (first to 3 wins, boot from game)
 
-// handling singles
 // waiting system, display template if in waiting room. (link to room)
 // latency (fk)
 // private games
 // redesign board
+// fix lighting
 // implement splash

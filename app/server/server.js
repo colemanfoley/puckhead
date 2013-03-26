@@ -23,13 +23,8 @@ io.sockets.on('connection', function (socket) {
   users[socket.id] = new User(socket);
   var user = users[socket.id];
 
-   socket.on('hi', function(data) {
-    var thisUser = users[socket.id];
-    setTimeout(function(){
-          thisUser.emit('hello', {room: thisUser.room});
-        }, 0)
-
-    console.log(users);
+  socket.on('hi', function(data) {
+    user.emit('hello', {room: user.room});
   });
 
 //conditional to deal with new users
@@ -47,7 +42,6 @@ io.sockets.on('connection', function (socket) {
     //assign each room's user an 'other' property to identify other room's user
     room.user1.other  = room.user2.id;
     room.user2.other  = room.user1.id;
-
 
     //sets waitng to undefined
     lobby.rooms.waiting = undefined;

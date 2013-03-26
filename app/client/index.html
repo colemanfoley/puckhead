@@ -23,10 +23,6 @@
     <script type="text/javascript">
       var socket = io.connect('http://10.0.1.11:8080');
 
-      var ping = function() {
-        socket.emit('ping', {ping: 'pong'});
-      };
-
       socket.on('hello', function(data) {
         console.log(data);
       })
